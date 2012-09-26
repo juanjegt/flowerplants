@@ -25,7 +25,10 @@
 <script language="Javascript"> 
   $(document).ready(function(){
     var ieVersion=getInternetExplorerVersion();
-    alert(ieVersion); 
+    if(ieVersion> -1 && ieVersion <9)
+    {
+      $("#navegado-malo").show();
+    }
   });
   
 
