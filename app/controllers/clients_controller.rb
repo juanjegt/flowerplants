@@ -10,6 +10,12 @@ class ClientsController < ApplicationController
     end
   end
 
+  def list
+    name = params[:id]
+    @clients = Client.WhereNameContains(name)
+    render :template => 'clients/list' , :layout=>false
+  end
+
   # GET /clients/1
   # GET /clients/1.json
   def show
