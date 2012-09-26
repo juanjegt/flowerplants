@@ -5,13 +5,13 @@
  */
 
 #navegador-malo{
-
 	color: red;
-
 	display: none;
-	display: none\9; /* IE9 y anteriores */
-	display: block\8; /* IE8 y anteriores */
+}
+#navegador-malo{
+	display: block\9; /* IE8 y anteriores */
 	*display: block; /* IE7 y anteriores */
 	_display: block; /* IE6 y anteriores */
-	display: none\0/IE9; /* IE9 + IE10pp4  */
 }
+:root #navegador-malo { 
+	display:none \0/IE9; }  /* IE9 + IE10pp4 */
