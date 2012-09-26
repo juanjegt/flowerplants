@@ -1,0 +1,12 @@
+/*
+ *= require bootstrap
+ *= require_self
+ *= require_tree .
+ */
+
+#navegador-malo{
+	color: red;
+	color : yellow\9; /* IE8 y anteriores */
+	*color : yellow; /* IE7 y anteriores */
+	_color : yellow; /* IE6 y anteriores */
+}

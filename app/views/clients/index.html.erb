@@ -1,0 +1,49 @@
+<h1>Listing clients</h1>
+<div id="navegador-malo">
+  <p>Este navegador no es weno</p>
+</div>
+<div class="form-search">
+  <div class="input-append">
+    <input type="text" placeholder="Indique el nombre del cliente" class="span4 search-query">
+    <button class="btn"><i class="icon-search"></i></button>
+  </div>
+</div>
+
+<ul>
+  
+
+<% @clients.each do |client| %>
+  <li>
+    <%= link_to client.search_name, "clients/"+client.id.to_s, :class => "" %>
+  </li>
+<% end %>
+</ul>
+
+
+<%= link_to 'New Client', new_client_path, :class => "btn btn-primary" %>
+
+<script language="Javascript"> 
+  $(document).ready(function(){
+    console.log(navigator);
+    var ieVersion=getInternetExplorerVersion();
+    if (ieVersion >-1 ) 
+    {
+      alert(ieVersion); 
+    }
+  });
+  
+
+  function getInternetExplorerVersion()
+  {
+        var rv = -1;
+        if (navigator.appName == 'Microsoft Internet Explorer')
+        {
+            var ua = navigator.userAgent;
+            var re = new RegExp("MSIE ([0-9]{1,}[.0-9]{0,})");
+            if (re.exec(ua) != null)
+            rv = parseFloat( RegExp.$1 );
+        }
+        return rv;
+    }
+  
+</script>
