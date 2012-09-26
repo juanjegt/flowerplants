@@ -1,6 +1,6 @@
 <h1>Listing clients</h1>
 <div id="navegador-malo">
-  <p>Este navegador no es weno</p>
+  <p>Este navegador no es weno, descargate otro</p>
 </div>
 <div class="form-search">
   <div class="input-append">
@@ -24,12 +24,8 @@
 
 <script language="Javascript"> 
   $(document).ready(function(){
-    console.log(navigator);
     var ieVersion=getInternetExplorerVersion();
-    if (ieVersion >-1 ) 
-    {
-      alert(ieVersion); 
-    }
+    alert(ieVersion); 
   });
   
 

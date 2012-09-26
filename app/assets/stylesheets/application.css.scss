@@ -5,8 +5,11 @@
  */
 
 #navegador-malo{
+
 	color: red;
-	color : yellow\9; /* IE8 y anteriores */
-	*color : yellow; /* IE7 y anteriores */
-	_color : yellow; /* IE6 y anteriores */
+
+	display: none;
+	display: block\8; /* IE8 y anteriores */
+	*display: block; /* IE7 y anteriores */
+	_display: block; /* IE6 y anteriores */
 }
