@@ -36,3 +36,6 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 
 # To use debugger
 # gem 'debugger'
+group :production do
+	gem 'pg'
+end
