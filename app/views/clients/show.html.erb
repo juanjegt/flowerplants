@@ -20,6 +20,11 @@
   <%= @client.town %>
 </p>
 
+<p>
+<b>Group:</b>
+<%= @client.ClientGroup.nil? ? '' : @client.ClientGroup.name %>
+</p>
+
 
 <%= link_to 'Edit', edit_client_path(@client) %> |
 <%= link_to 'Back', clients_path %>
