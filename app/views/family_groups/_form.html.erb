@@ -1,0 +1,21 @@
+<%= form_for(@family_group) do |f| %>
+  <% if @family_group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@family_group.errors.count, "error") %> prohibited this family_group from being saved:</h2>
+
+      <ul>
+      <% @family_group.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :profit_margin %><br />
+    <%= f.text_field :profit_margin %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

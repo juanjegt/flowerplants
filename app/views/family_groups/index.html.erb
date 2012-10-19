@@ -1,0 +1,23 @@
+<h1>Listing family_groups</h1>
+
+<table>
+  <tr>
+    <th>Profit margin</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @family_groups.each do |family_group| %>
+  <tr>
+    <td><%= family_group.profit_margin %></td>
+    <td><%= link_to 'Show', family_group %></td>
+    <td><%= link_to 'Edit', edit_family_group_path(family_group) %></td>
+    <td><%= link_to 'Destroy', family_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Family group', new_family_group_path %>

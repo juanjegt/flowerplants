@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @family.name %>
+</p>
+
+<p>
+  <b>Profit margin:</b>
+  <%= @family.profit_margin %>
+</p>
+
+<p>
+  <b>Packaging unit:</b>
+  <%= @family.packaging_unit %>
+</p>
+
+
+<%= link_to 'Edit', edit_family_path(@family) %> |
+<%= link_to 'Back', families_path %>

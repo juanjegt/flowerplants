@@ -1,4 +1,8 @@
 Flowerplants::Application.routes.draw do
+  resources :family_groups
+
+  resources :families
+
   resources :clients
   resources :client_groups
 

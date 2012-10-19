@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  profit_margin: 9.99
+  packaging_unit: 1
+
+two:
+  name: MyString
+  profit_margin: 9.99
+  packaging_unit: 1

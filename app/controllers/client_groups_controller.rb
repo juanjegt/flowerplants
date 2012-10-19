@@ -28,7 +28,7 @@ class ClientGroupsController < ApplicationController
   end
 
   def create
-    @group = ClientGroup.new(params[:group])
+    @group = ClientGroup.new(params[:client_group])
 
     respond_to do |format|
       if @client.save
@@ -45,7 +45,7 @@ class ClientGroupsController < ApplicationController
     @group = ClientGroup.find(params[:id])
 
     respond_to do |format|
-      if @group.update_attributes(params[:group])
+      if @group.update_attributes(params[:client_group])
         format.html { redirect_to @group, notice: 'Group was successfully updated.' }
         format.json { head :no_content }
       else
