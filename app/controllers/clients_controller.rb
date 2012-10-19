@@ -1,4 +1,5 @@
 class ClientsController < ApplicationController
+  before_filter :get_clients_groups, :only => [:new, :create, :edit, :update]
   # GET /clients
   # GET /clients.json
   def index
@@ -86,4 +87,11 @@ class ClientsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+   
+  def get_clients_groups
+    @clientGroups=ClientGroup.all
+  end   
+
 end

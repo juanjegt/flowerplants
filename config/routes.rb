@@ -1,5 +1,6 @@
 Flowerplants::Application.routes.draw do
   resources :clients
+  resources :client_groups
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -58,5 +59,6 @@ Flowerplants::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
   get "clients/list/id"
+  get "client_groups/list/id"
   match ":controller(/:action(/:id(.:format)))"
 end

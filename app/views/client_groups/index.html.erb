@@ -1,0 +1,41 @@
+<div class="span12"></div>
+
+<div class="form-search">
+  <div class="input-append">
+    <input id="txt-search" type="text" placeholder="Indique el nombre del grupo" class="span4 search-query">
+    <button id="btn-search" class="btn"><i class="icon-search"></i></button>
+  </div>
+</div>
+
+<ul id="client_groups">
+
+</ul>
+
+
+<%= link_to 'New Group', new_client_group_path, :class => "btn btn-primary" %>
+
+<script language="Javascript"> 
+  $(document).ready(function(){
+    $("#btn-search").click(function(){
+      SearchClientGroups();
+    });
+    
+
+    $("#txt-search").autocomplete({
+      source: SearchClientGroups
+    });
+
+  });
+
+  function SearchClientGroups()
+  {
+    var group = $("#txt-search").val();
+      if(group)
+      {
+        $.get('client_groups/list/'+group, function(data) {
+          $('#client_groups').html(data);
+        });
+      }
+  }
+
+</script>
