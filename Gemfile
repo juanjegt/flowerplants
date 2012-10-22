@@ -37,6 +37,7 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 group :development, :test do
 	gem 'foreman'
 	gem 'sqlite3'
+	gem "rspec-rails", "~> 2.0"
 end
 
 group :production do

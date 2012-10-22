@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121019104129) do
+ActiveRecord::Schema.define(:version => 20121022191138) do
 
   create_table "client_groups", :force => true do |t|
     t.string   "name"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(:version => 20121019104129) do
     t.integer  "ClientGroup_id"
   end
 
+  create_table "colors", :force => true do |t|
+    t.integer  "Family_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "colors", ["Family_id"], :name => "index_colors_on_Family_id"
+
   create_table "families", :force => true do |t|
     t.string   "name"
     t.decimal  "profit_margin"
@@ -44,5 +52,15 @@ ActiveRecord::Schema.define(:version => 20121019104129) do
     t.integer  "Family_id"
     t.integer  "ClientGroup_id"
   end
+
+  create_table "varieties", :force => true do |t|
+    t.integer  "Family_id"
+    t.integer  "Color_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "varieties", ["Color_id"], :name => "index_varieties_on_Color_id"
+  add_index "varieties", ["Family_id"], :name => "index_varieties_on_Family_id"
 
 end
