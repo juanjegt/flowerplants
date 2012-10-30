@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121022191138) do
+ActiveRecord::Schema.define(:version => 20121030112201) do
 
   create_table "client_groups", :force => true do |t|
     t.string   "name"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20121022191138) do
     t.integer  "Family_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name"
   end
 
   add_index "colors", ["Family_id"], :name => "index_colors_on_Family_id"
@@ -53,11 +54,26 @@ ActiveRecord::Schema.define(:version => 20121022191138) do
     t.integer  "ClientGroup_id"
   end
 
+  create_table "products", :force => true do |t|
+    t.string   "name"
+    t.string   "photo"
+    t.integer  "Family_id"
+    t.integer  "Color_id"
+    t.integer  "Variety_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "products", ["Color_id"], :name => "index_products_on_Color_id"
+  add_index "products", ["Family_id"], :name => "index_products_on_Family_id"
+  add_index "products", ["Variety_id"], :name => "index_products_on_Variety_id"
+
   create_table "varieties", :force => true do |t|
     t.integer  "Family_id"
     t.integer  "Color_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name"
   end
 
   add_index "varieties", ["Color_id"], :name => "index_varieties_on_Color_id"

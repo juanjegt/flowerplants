@@ -1,20 +1,26 @@
-<p id="notice"><%= notice %></p>
-
+<%= link_to 'Volver', products_path %>
+<legend>Producto: <%= @family.name %></legend>
 <p>
-  <b>Name:</b>
-  <%= @family.name %>
-</p>
-
-<p>
-  <b>Profit margin:</b>
+  <label>Margen de venta:</label>
   <%= @family.profit_margin %>
 </p>
 
 <p>
-  <b>Packaging unit:</b>
+  <label>Unidades paquete:</label>
   <%= @family.packaging_unit %>
 </p>
 
 
-<%= link_to 'Edit', edit_family_path(@family) %> |
-<%= link_to 'Back', families_path %>
+<%= link_to 'Editar', edit_family_path(@family), :class=> 'btn btn-primary' %>
+
+<legend>Colores</legend>
+<ul>
+	<% @family.colors.each do |color| %>
+	  <li>
+	    <%= link_to color.name, "colors/"+color.id.to_s, :class => "" %>
+	  </li>
+	  <hr/>
+	<% end %>
+</ul>
+<%= link_to 'Nuevo color', new_color_path(@family.id), :class=> 'btn btn-primary' %>
+

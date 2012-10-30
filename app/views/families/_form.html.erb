@@ -1,29 +1,21 @@
-<%= form_for(@family) do |f| %>
-  <% if @family.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@family.errors.count, "error") %> prohibited this family from being saved:</h2>
-
-      <ul>
-      <% @family.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for(@family, :class => 'form-horizontal') do |f| %>
+  <div class="control-group">
+    <label class="control-label" for="name">Nombre</label>
+    <div class="controls">
+      <%= f.text_field :name, :placeholder=>'name' %>
     </div>
-  <% end %>
+    <label class="control-label" for="name">Margen de venta</label>
+    <div class="controls">
+      <%= f.text_field :profit_margin, :placeholder=>'% margen' %>
+    </div>
+    <label class="control-label" for="name">Unidades por paquete</label>
+    <div class="controls">
+      <%= f.text_field :packaging_unit, :placeholder=>'unidades por paquete' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :profit_margin %><br />
-    <%= f.text_field :profit_margin %>
-  </div>
-  <div class="field">
-    <%= f.label :packaging_unit %><br />
-    <%= f.number_field :packaging_unit %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <%= link_to 'Volver', @family, :class =>'btn' %>
   </div>
 <% end %>

@@ -1,5 +1,6 @@
-<% @results.each do |result| %>
+<% @clients.each do |client| %>
   <li>
-    <%= link_to result, "clients/"+client.id.to_s, :class => "" %>
+    <%= link_to client, "clients/"+client.id.to_s, :class => "" %>
   </li>
+  <hr/>
 <% end %>

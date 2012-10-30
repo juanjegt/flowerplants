@@ -1,8 +1,9 @@
 Flowerplants::Application.routes.draw do
   resources :family_groups
-
+  resources :products
   resources :families
-
+  resources :colors
+  resources :varieties
   resources :clients
   resources :client_groups
 
@@ -63,6 +64,7 @@ Flowerplants::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
   get "clients/list/id"
+  get "products/list/id"
   get "client_groups/list/id"
   match ":controller(/:action(/:id(.:format)))"
 end

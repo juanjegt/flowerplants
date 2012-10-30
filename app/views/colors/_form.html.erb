@@ -1,0 +1,14 @@
+<%= form_for(@color, :class => 'form-horizontal') do |f| %>
+  <div class="control-group">
+    <label> Familia: <%= @color.Family.name%> </label>  <input type="hidden" name="family_id" value="<%= @color.Family.id %>">
+    <label class="control-label" for="name">Nombre</label>
+    <div class="controls">
+      <%= f.text_field :name, :placeholder=>'name' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <%= link_to 'Volver', @color.Family, :class =>'btn' %>
+  </div>
+<% end %>

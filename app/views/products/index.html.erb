@@ -1,0 +1,38 @@
+<div class="span12">Products</div>
+
+<div class="form-search">
+  <div class="input-append">
+    <input id="txt-search" type="text" placeholder="Indique el nombre del producto" class="span4 search-query">
+    <button id="btn-search" class="btn"><i class="icon-search"></i></button>
+  </div>
+  <ul id="products" class="unstyled"></ul>
+</div>
+
+
+<%= link_to 'Añadir nueva familia', new_family_path, :class => "btn btn-primary" %>
+
+<script language="Javascript"> 
+  $(document).ready(function(){
+    $("#btn-search").click(function(){
+      SearchProducts();
+    });
+    
+
+    $("#txt-search").autocomplete({
+      source: SearchProducts
+    });
+
+  });
+
+  function SearchProducts()
+  {
+    var product = $("#txt-search").val();
+      if(product)
+      {
+        $.get('products/list/'+product, function(data) {
+          $('#products').html(data);
+        });
+      }
+  }
+
+</script>

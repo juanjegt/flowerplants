@@ -1,0 +1,14 @@
+<%= link_to 'Volver', products_path %>
+<legend>Producto: <%= @color.name %></legend>
+<%= link_to 'Editar', edit_color_path(@color), :class=> 'btn btn-primary' %>
+
+<legend>Variedades</legend>
+<ul>
+	<% @color.varieties.each do |variety| %>
+	  <li>
+	    <%= link_to variety.name, "varieties/"+variety.id.to_s, :class => "" %>
+	  </li>
+	  <hr/>
+	<% end %>
+</ul>
+<%= link_to 'Nueva variedad', new_color_path(@color.id), :class=> 'btn btn-primary' %>

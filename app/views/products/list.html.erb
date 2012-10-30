@@ -1,0 +1,6 @@
+<% @products.each do |product| %>
+  <li>
+    <%= link_to product.name, "products/"+product.id.to_s, :class => "" %>
+  </li>
+  <hr/>
+<% end %>
