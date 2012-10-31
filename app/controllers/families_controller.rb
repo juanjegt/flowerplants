@@ -20,7 +20,7 @@ class FamiliesController < ApplicationController
   def create
     @family = Family.new(params[:family])
 
-    if @family.save
+    if CreatesFamily.create(@family)
       redirect_to @family, notice: 'Family was successfully created.'
     else
       render action: "new"
@@ -33,7 +33,7 @@ class FamiliesController < ApplicationController
     if @family.update_attributes(params[:family])
       redirect_to @family, notice: 'Family was successfully updated.'
     else
-      render action: "edit" 
+      render action: "show" 
     end
   end
 end

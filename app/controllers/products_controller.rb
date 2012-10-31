@@ -11,13 +11,13 @@ class ProductsController < ApplicationController
 
   def show
     product = Product.find(params[:id])
-    if !product.Variety.nil?
-      redirect_to product.Variety
+    if !(product.variety == nil)
+      redirect_to product.variety
     else
-      if !product.Color.nil?
-        redirect_to product.Color
+      if !(product.color == nil)
+        redirect_to product.color
       else
-        redirect_to product.Family
+        redirect_to product.family
       end
     end
   end

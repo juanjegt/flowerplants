@@ -24,19 +24,19 @@ ActiveRecord::Schema.define(:version => 20121030112201) do
     t.string   "phone"
     t.string   "city"
     t.string   "town"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.integer  "ClientGroup_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "client_group_id"
   end
 
   create_table "colors", :force => true do |t|
-    t.integer  "Family_id"
+    t.integer  "family_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "name"
   end
 
-  add_index "colors", ["Family_id"], :name => "index_colors_on_Family_id"
+  add_index "colors", ["family_id"], :name => "index_colors_on_family_id"
 
   create_table "families", :force => true do |t|
     t.string   "name"
@@ -48,35 +48,35 @@ ActiveRecord::Schema.define(:version => 20121030112201) do
 
   create_table "family_groups", :force => true do |t|
     t.decimal  "profit_margin"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.integer  "Family_id"
-    t.integer  "ClientGroup_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "family_id"
+    t.integer  "client_group_id"
   end
 
   create_table "products", :force => true do |t|
     t.string   "name"
     t.string   "photo"
-    t.integer  "Family_id"
-    t.integer  "Color_id"
-    t.integer  "Variety_id"
+    t.integer  "family_id"
+    t.integer  "color_id"
+    t.integer  "variety_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "products", ["Color_id"], :name => "index_products_on_Color_id"
-  add_index "products", ["Family_id"], :name => "index_products_on_Family_id"
-  add_index "products", ["Variety_id"], :name => "index_products_on_Variety_id"
+  add_index "products", ["color_id"], :name => "index_products_on_color_id"
+  add_index "products", ["family_id"], :name => "index_products_on_family_id"
+  add_index "products", ["variety_id"], :name => "index_products_on_variety_id"
 
   create_table "varieties", :force => true do |t|
-    t.integer  "Family_id"
-    t.integer  "Color_id"
+    t.integer  "family_id"
+    t.integer  "color_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "name"
   end
 
-  add_index "varieties", ["Color_id"], :name => "index_varieties_on_Color_id"
-  add_index "varieties", ["Family_id"], :name => "index_varieties_on_Family_id"
+  add_index "varieties", ["color_id"], :name => "index_varieties_on_color_id"
+  add_index "varieties", ["family_id"], :name => "index_varieties_on_family_id"
 
 end

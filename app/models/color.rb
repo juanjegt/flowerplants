@@ -1,17 +1,10 @@
 class Color < ActiveRecord::Base
   attr_accessible :name
-  belongs_to :Family
+  belongs_to :family
   has_many :varieties
-  before_save :create_product
-  
-private
-  def create_product
-  	product = Product.new
-  	product.Family = self.Family
-  	product.Color = self
-  	product.name = product.Family.name + ' ' + name
-  	
-  	product.save
+
+  def product
+    Product.where(:family_id => family_id, :color_id => id, :variety_id => nil).first
   end
 
 end

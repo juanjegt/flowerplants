@@ -1,11 +1,5 @@
-<legend>Nueva familia</legend>
-
 <%= form_for(@family, :class => 'form-horizontal') do |f| %>
   <div class="control-group">
-    <label class="control-label" for="name">Nombre</label>
-    <div class="controls">
-      <%= f.text_field :name, :placeholder=>'name' %>
-    </div>
     <label class="control-label" for="name">Margen de venta</label>
     <div class="controls">
       <%= f.text_field :profit_margin, :placeholder=>'% margen' %>
@@ -20,5 +14,3 @@
     <button type="submit" class="btn btn-primary">Guardar</button>
   </div>
 <% end %>
-
-

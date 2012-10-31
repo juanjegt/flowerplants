@@ -3,14 +3,14 @@ class CreateProducts < ActiveRecord::Migration
     create_table :products do |t|
       t.string :name
       t.string :photo
-      t.references :Family
-      t.references :Color
-      t.references :Variety
+      t.references :family
+      t.references :color
+      t.references :variety
 
       t.timestamps
     end
-    add_index :products, :Family_id
-    add_index :products, :Color_id
-    add_index :products, :Variety_id
+    add_index :products, :family_id
+    add_index :products, :color_id
+    add_index :products, :variety_id
   end
 end

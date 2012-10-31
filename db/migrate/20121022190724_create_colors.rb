@@ -1,10 +1,10 @@
 class CreateColors < ActiveRecord::Migration
   def change
     create_table :colors do |t|
-      t.references :Family
+      t.references :family
 
       t.timestamps
     end
-    add_index :colors, :Family_id
+    add_index :colors, :family_id
   end
 end

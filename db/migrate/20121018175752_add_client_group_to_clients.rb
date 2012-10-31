@@ -1,5 +1,5 @@
 class AddClientGroupToClients < ActiveRecord::Migration
   def change
-  	add_column :clients, :ClientGroup_id, :integer
+  	add_column :clients, :client_group_id, :integer
   end
 end

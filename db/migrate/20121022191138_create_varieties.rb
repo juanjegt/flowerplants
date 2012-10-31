@@ -1,12 +1,12 @@
 class CreateVarieties < ActiveRecord::Migration
   def change
     create_table :varieties do |t|
-      t.references :Family
-      t.references :Color
+      t.references :family
+      t.references :color
 
       t.timestamps
     end
-    add_index :varieties, :Family_id
-    add_index :varieties, :Color_id
+    add_index :varieties, :family_id
+    add_index :varieties, :color_id
   end
 end
